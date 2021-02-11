@@ -18,10 +18,6 @@ envs:
 artifacts:
   - md5: ""
     name: strimzi-kafka-scripts.zip
-  - md5: ""
-    name: connect-api.jar
-  - md5: ""
-    name: connect-basic-auth-extension.jar
 
 packages:
   manager: microdnf

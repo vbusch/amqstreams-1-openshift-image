@@ -8,8 +8,10 @@ envs:
     value: "amqstreams-kafka-26-container"
 
 artifacts:
-  - md5: d5bbbac769d575d3df800b0b913a01e2
-    name: streams-ocp-26.zip
+  - md5: ""
+    name: connect-api.jar
+  - md5: ""
+    name: connect-basic-auth-extension.jar
 
 modules:
   install:
