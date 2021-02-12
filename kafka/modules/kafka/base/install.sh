@@ -19,15 +19,14 @@ mkdir -p -m g+rw /usr/local/var/run/
 
 chmod -R 0755 ${KAFKA_HOME}
 
-# Copy contents of Cruise Control zip without the root dir
-TMP=$(zipinfo -1  ${SOURCES_DIR}/cruise-control-ocp.zip | grep -oE '^[^/]+' | uniq)
-unzip ${SOURCES_DIR}/cruise-control-ocp.zip
-mv ${TMP}/* ${CRUISE_CONTROL_HOME}/
+# Copy zookeeper
+mv ${SOURCES_DIR}/zookeeper.jar ${CRUISE_CONTROL_HOME}/
 
 # extract all the Kafka related scripts
 unzip ${SOURCES_DIR}/strimzi-kafka-scripts.zip -d ${SCRIPTS_DIR}
 
 # NOTE: kafka folder alredy contains the s2i (so no need for a specific cp command)
+# These could be packaged in a smaller scripts zip
 cp -r ${SCRIPTS_DIR}/kafka/* ${KAFKA_HOME}/
 chmod -R 755 ${KAFKA_HOME}
 
